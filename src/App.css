@@ -98,3 +98,10 @@ h4 {
   font-size: 14px;
   width: 160px;
 }
+
+@media (max-width: 400px) {
+  #instructions,
+  #credits {
+    width: 100%;
+  }
+}

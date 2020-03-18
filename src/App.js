@@ -202,22 +202,27 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div tabIndex="0" onKeyDown={this.handleKeyDown} id="main" class="main">
+        <div
+          tabIndex="0"
+          onKeyDown={this.handleKeyDown}
+          id="main"
+          className="main"
+        >
           <div id="text">
-            <h2 id="display" class="display">
+            <h2 id="display" className="display">
               {this.state.inputText}
             </h2>
-            <h2 id="lastNumber" class="lastNumber">
+            <h2 id="lastNumber" className="lastNumber">
               {this.state.lastNum}
             </h2>
           </div>
           <div id="program">
             <div id="container">
               <div id="options">
-                <button id="clear" class="clear" onClick={this.doClear}>
+                <button id="clear" className="clear" onClick={this.doClear}>
                   AC
                 </button>
-                <button id="delete" class="delete" onClick={this.doDelete}>
+                <button id="delete" className="delete" onClick={this.doDelete}>
                   DEL
                 </button>
               </div>
@@ -278,7 +283,7 @@ class App extends React.Component {
               <button id="divide" onClick={this.setOperation}>
                 /
               </button>
-              <button id="equals" class="equals" onClick={this.doOperation}>
+              <button id="equals" className="equals" onClick={this.doOperation}>
                 =
               </button>
             </div>

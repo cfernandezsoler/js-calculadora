@@ -73,7 +73,8 @@ class App extends React.Component {
       (!lastNum && number == 0)
     )
       return;
-    if (text != "0") number = text.concat(number);
+    if (text != "0" && text.indexOf("Infinity") == -1)
+      number = text.concat(number);
 
     lastNum = number.split(/[+*/-]/);
     lastNum = lastNum.length > 0 ? lastNum[lastNum.length - 1] : number;
@@ -88,6 +89,7 @@ class App extends React.Component {
     let text = this.state.inputText;
     let len = text.length;
     if (len < 1) return;
+    if (text.indexOf("Infinity") != -1) return;
 
     let lastInputChar = text[len - 1];
     let secondLastInputChar = len > 1 ? text[len - 2] : "NaN"; // checks to prevent out of index
@@ -185,7 +187,7 @@ class App extends React.Component {
     let text = this.state.inputText;
     let lastNum = this.state.lastNum;
 
-    if (!text || text.length == 1) text = "0";
+    if (!text || text.length == 1 || text.indexOf("Infinity") != -1) text = "0";
     else text = text.slice(0, text.length - 1);
 
     lastNum = text.split(/[+*/-]/);
